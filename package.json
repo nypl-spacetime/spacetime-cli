@@ -1,0 +1,21 @@
+{
+  "name": "spacetime-cli",
+  "version": "0.5.0",
+  "description": "Space/Time CLI tools",
+  "main": "index.js",
+  "bin": {
+    "spacetime-to-json": "to-json.js",
+    "spacetime-to-geojson": "to-geojson.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nypl-spacetime/spacetime-cli.git"
+  },
+  "author": "Bert Spaan",
+  "license": "MIT",
+  "dependencies": {
+    "highland": "^2.5.1",
+    "minimist": "^1.1.1",
+    "ramda": "^0.22.1"
+  }
+}
