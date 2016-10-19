@@ -15,3 +15,7 @@ Convert Space/Time NDJSON to JSON:
 Convert Space/Time NDJSON to GeoJSON:
 
     spacetime-to-geojson spacetime.ndjson    
+
+spacetime-cli also works if you pipe data into the tool:
+
+    cat spacetime.ndjson | spacetime-to-json
