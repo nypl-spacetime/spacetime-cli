@@ -48,9 +48,9 @@ function stringify (object) {
   const params = Object.assign({}, userParams)
 
   if (process.stdin.isTTY && !argv._[0]) {
-    return console.error(`Usage: ${name} [-o file] FILE\n` +
-      `-f, --flatten  JSON array of JSON paths, used to flatten nested data field\n` +
-      `-o, --output   Path to output file, if not given, ${name} uses stdout`)
+    return console.error(`Usage: ${name} [-f jsonPaths] [-o file] FILE\n` +
+      `  -f, --flatten  JSON array of JSON paths, used to flatten nested data field\n` +
+      `  -o, --output   Path to output file, if not given, ${name} uses stdout`)
   }
 
   const jsonPaths = jsonPathsFromArgv()

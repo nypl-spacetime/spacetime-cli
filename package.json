@@ -1,6 +1,6 @@
 {
   "name": "spacetime-cli",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Command line tools for NYC Space/Time Directory data",
   "main": "index.js",
   "bin": {
