@@ -1,6 +1,6 @@
 {
   "name": "spacetime-cli",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Command line tools for NYC Space/Time Directory data",
   "main": "index.js",
   "bin": {
@@ -17,7 +17,7 @@
   "dependencies": {
     "highland": "^2.11.1",
     "json2csv": "^3.11.5",
-    "jsonpath": "^1.0.0",
+    "jsonpath": "github:nypl-spacetime/jsonpath",
     "minimist": "^1.2.0",
     "ramda": "^0.25.0"
   }
