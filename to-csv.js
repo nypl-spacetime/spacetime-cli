@@ -7,7 +7,12 @@ const json2csv = require('json2csv')
 const name = 'spacetime-to-csv'
 const separator = ';'
 
-const jsonPaths = io.jsonPathsFromArgv()
+let jsonPaths
+try {
+  jsonPaths = io.jsonPathsFromArgv()
+} catch (err) {
+  jsonPaths = []
+}
 
 const columns = [
   'id',
