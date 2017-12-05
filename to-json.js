@@ -3,9 +3,10 @@
 const io = require('./io')
 
 const name = 'spacetime-to-json'
-const array = {
+const params = {
   open: '[',
-  close: ']\n'
+  close: ']\n',
+  separator: ',\n'
 }
 
-io(name, array)
+io.run(name, params)

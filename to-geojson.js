@@ -3,24 +3,21 @@
 const io = require('./io')
 const R = require('ramda')
 
-const name = 'spacetime-to-json'
-const geojson = {
+const name = 'spacetime-to-geojson'
+const params = {
   open: '{"type":"FeatureCollection","features":[',
-  close: ']}\n'
+  close: ']}\n',
+  separator: ',\n'
 }
 
-const toFeature = (line) => {
-  const obj = JSON.parse(line)
-
-  if (obj.geometry) {
-    return JSON.stringify({
+function toFeature (object) {
+  if (object.geometry) {
+    return {
       type: 'Feature',
-      properties: R.omit(['geometry'], obj),
-      geometry: obj.geometry
-    })
-  } else {
-    return null
+      properties: R.omit(['geometry'], object),
+      geometry: object.geometry
+    }
   }
 }
 
-io(name, geojson, toFeature)
+io.run(name, params, toFeature)
