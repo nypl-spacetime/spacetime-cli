@@ -64,7 +64,7 @@ If one Object from `/path/to/dataset.objects.ndjson` looks like this:
 
 The resulting flat GeoJSON will look like this:
 
-```
+```json
 {
   "type": "FeatureCollection",
   "features": [
