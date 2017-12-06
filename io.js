@@ -10,6 +10,10 @@ const argv = require('minimist')(process.argv.slice(2), {
 })
 
 function jsonPathsFromArgv () {
+  if (!argv.flatten) {
+    return
+  }
+
   const errorMessage = '--flatten argument must be JSON array of JSON path strings'
 
   try {
@@ -23,8 +27,6 @@ function jsonPathsFromArgv () {
   } catch (err) {
     throw new Error(errorMessage)
   }
-
-  return []
 }
 
 function flatten (jsonPaths, object) {
@@ -58,14 +60,15 @@ function stringify (object) {
   const stream = ((argv._.length ? fs.createReadStream(argv._[0], 'utf8') : process.stdin))
 
   let transform = H.pipeline()
+
   if (mapFunc) {
     transform = H.pipeline(
       H.map(JSON.parse),
-      H.map(H.curry(flatten, jsonPaths)),
+      H.map((object) => jsonPaths ? flatten (jsonPaths, object) : object),
       H.map((object) => mapFunc ? mapFunc(object) : object),
       H.map(stringify)
     )
-  } else if (argv.flatten) {
+  } else if (jsonPaths) {
     transform = H.pipeline(
       H.map(JSON.parse),
       H.map(H.curry(flatten, jsonPaths)),
