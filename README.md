@@ -68,24 +68,25 @@ The resulting flat GeoJSON will look like this:
 {
   "type": "FeatureCollection",
   "features": [
-  {
-    "type": "Feature",
-    "properties": {
-      "id": "130148-1",
-      "type": "st:Address",
-      "validSince": 1857,
-      "validUntil": 1857,
-      "name": "41 West 37th Street",
-      "$.data.mapId": 7206,
-      "$.data.address.street": "West 37th Street",
-      "$.data.address.number": "41"
-    },
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        -73.9850556,
-        40.7512214
-      ]
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "130148-1",
+        "type": "st:Address",
+        "validSince": 1857,
+        "validUntil": 1857,
+        "name": "41 West 37th Street",
+        "$.data.mapId": 7206,
+        "$.data.address.street": "West 37th Street",
+        "$.data.address.number": "41"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9850556,
+          40.7512214
+        ]
+      }
     }
   ]
 }
